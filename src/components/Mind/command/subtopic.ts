@@ -1,4 +1,4 @@
-import { MindData } from '@/common/interfaces';
+import { TreeGraph, MindData } from '@/common/interfaces';
 import commandManager from '@/common/commandManager';
 import { BaseCommand } from '@/components/Graph/command/base';
 import { topicCommand } from './topic';
@@ -8,7 +8,7 @@ interface SubtopicCommandParams {
   model: MindData;
 }
 
-const subtopicCommand: BaseCommand<SubtopicCommandParams, G6.TreeGraph> = {
+const subtopicCommand: BaseCommand<SubtopicCommandParams, TreeGraph> = {
   ...topicCommand,
 
   canExecute(graph) {

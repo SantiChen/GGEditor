@@ -1,6 +1,5 @@
 import React from 'react';
 import { EditorEvent } from '@/common/constants';
-import { GraphStateEvent } from '@/common/interfaces';
 import commandManager from '@/common/commandManager';
 import { EditorContextProps, withEditorContext } from '@/components/EditorContext';
 
@@ -29,7 +28,7 @@ class Command extends React.Component<CommandProps, CommandState> {
       disabled: !commandManager.canExecute(graph, name),
     });
 
-    graph.on<GraphStateEvent>(EditorEvent.onGraphStateChange, () => {
+    graph.on(EditorEvent.onGraphStateChange, () => {
       this.setState({
         disabled: !commandManager.canExecute(graph, name),
       });

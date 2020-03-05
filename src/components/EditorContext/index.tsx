@@ -1,13 +1,14 @@
 import React from 'react';
+import { Graph } from '@/common/interfaces';
 import withContext from '@/common/withContext';
 
 export interface EditorContextProps {
-  graph: G6.Graph | null;
+  graph: Graph | null;
   executeCommand: (name: string, params?: object) => void;
 }
 
 export interface EditorPrivateContextProps {
-  setGraph: (graph: G6.Graph) => void;
+  setGraph: (graph: Graph) => void;
 }
 
 export const EditorContext = React.createContext({} as EditorContextProps);

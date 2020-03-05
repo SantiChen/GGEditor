@@ -1,4 +1,5 @@
 import pick from 'lodash/pick';
+import { Graph, TreeGraph } from '@/common/interfaces';
 import commandManager from '@/common/commandManager';
 import { BaseCommand, baseCommand } from '@/components/Graph/command/base';
 
@@ -9,7 +10,7 @@ interface UpdateCommandParams {
   forceRefreshLayout: boolean;
 }
 
-const updateCommand: BaseCommand<UpdateCommandParams, G6.Graph & G6.TreeGraph> = {
+const updateCommand: BaseCommand<UpdateCommandParams, Graph & TreeGraph> = {
   ...baseCommand,
 
   params: {
